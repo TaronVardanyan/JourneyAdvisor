@@ -13,7 +13,10 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "npm run type-check && npm run lint",
+    "lint": "eslint . --ext .ts,.tsx",
+    "type-check": "tsc --pretty"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
@@ -31,12 +34,22 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@types/node": "^17.0.45",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-webpack-plugin": "^3.2.0",
+    "gatsby-plugin-eslint": "^4.0.2",
+    "prettier": "2.7.1",
     "typescript": "^4.7.4"
   }
 }

@@ -1,0 +1,78 @@
+Arguments: 
+  /home/taron/.nvm/versions/node/v14.17.5/bin/node /home/taron/.nvm/versions/node/v14.17.5/bin/yarn add @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-jsx-a11y eslint-plugin-react --dev
+
+PATH: 
+  /home/taron/.nvm/versions/node/v14.17.5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/taron/JourneyAdvisor/node_modules/.bin
+
+Yarn version: 
+  1.22.11
+
+Node version: 
+  14.17.5
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/eslint-jsx-a11y: Not found
+      at Request.params.callback [as _callback] (/home/taron/.nvm/versions/node/v14.17.5/lib/node_modules/yarn/lib/cli.js:66992:18)
+      at Request.self.callback (/home/taron/.nvm/versions/node/v14.17.5/lib/node_modules/yarn/lib/cli.js:140763:22)
+      at Request.emit (events.js:400:28)
+      at Request.<anonymous> (/home/taron/.nvm/versions/node/v14.17.5/lib/node_modules/yarn/lib/cli.js:141735:10)
+      at Request.emit (events.js:400:28)
+      at IncomingMessage.<anonymous> (/home/taron/.nvm/versions/node/v14.17.5/lib/node_modules/yarn/lib/cli.js:141657:12)
+      at Object.onceWrapper (events.js:519:28)
+      at IncomingMessage.emit (events.js:412:35)
+      at endReadableNT (internal/streams/readable.js:1317:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21)
+
+npm manifest: 
+  {
+    "name": "journey-advisor",
+    "version": "1.0.0",
+    "private": true,
+    "description": "journey-advisor",
+    "author": "Taron Vardanyan",
+    "keywords": [
+      "gatsby"
+    ],
+    "scripts": {
+      "develop": "gatsby develop",
+      "start": "gatsby develop",
+      "build": "gatsby build",
+      "serve": "gatsby serve",
+      "clean": "gatsby clean",
+      "typecheck": "tsc --noEmit"
+    },
+    "dependencies": {
+      "@mdx-js/mdx": "^1.6.22",
+      "@mdx-js/react": "^1.6.22",
+      "babel-plugin-styled-components": "^2.0.7",
+      "gatsby": "^4.18.0",
+      "gatsby-plugin-image": "^2.18.0",
+      "gatsby-plugin-manifest": "^4.18.0",
+      "gatsby-plugin-mdx": "^3.18.0",
+      "gatsby-plugin-react-helmet": "^5.18.0",
+      "gatsby-plugin-sharp": "^4.18.0",
+      "gatsby-plugin-styled-components": "^5.18.0",
+      "gatsby-source-filesystem": "^4.18.0",
+      "gatsby-transformer-sharp": "^4.18.0",
+      "react": "^18.1.0",
+      "react-dom": "^18.1.0",
+      "react-helmet": "^6.1.0",
+      "styled-components": "^5.3.5",
+      "yarn": "^1.22.19"
+    },
+    "devDependencies": {
+      "@types/node": "^17.0.45",
+      "@types/react": "^18.0.14",
+      "@types/react-dom": "^18.0.5",
+      "typescript": "^4.7.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
