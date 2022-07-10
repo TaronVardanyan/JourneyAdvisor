@@ -1,17 +1,24 @@
 import React from "react";
 import { LayoutProps } from "./types";
 import Helmet from "react-helmet";
-import { PageWrapper } from "./styles";
+import GlobalStyle from "../../styles/global";
+import Theme from "../../styles/theme";
+import { ThemeProvider } from "styled-components";
 
 const Layout = ({ pageTitle, children }: LayoutProps) => {
   return (
-    <PageWrapper>
-      <Helmet>
+    <ThemeProvider theme={Theme}>
+      <Helmet
+        bodyAttributes={{
+          class: "body",
+        }}
+      >
         <meta charSet="utf-8" />
         <title>{pageTitle}</title>
       </Helmet>
-      <main>{children}</main>
-    </PageWrapper>
+      <GlobalStyle />
+      {children}
+    </ThemeProvider>
   );
 };
 
