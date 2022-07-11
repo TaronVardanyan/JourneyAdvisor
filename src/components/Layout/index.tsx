@@ -4,18 +4,14 @@ import Helmet from "react-helmet";
 import GlobalStyle from "../../styles/global";
 import Theme from "../../styles/theme";
 import { ThemeProvider } from "styled-components";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import {
-  createTheme,
-  ThemeProvider as MaterialThemeProvider,
-} from "@material-ui/core";
-
-const materialDarkTheme = createTheme();
+import CssBaseline from "@mui/material/CssBaseline";
+import { materialUiTheme } from "../../styles/materialUITheme";
+import { ThemeProvider as MaterialThemeProvider } from "@mui/material/styles";
 
 const Layout = ({ pageTitle, children }: LayoutProps) => {
   return (
-    <MaterialThemeProvider theme={materialDarkTheme}>
-      <ThemeProvider theme={Theme}>
+    <ThemeProvider theme={Theme}>
+      <MaterialThemeProvider theme={materialUiTheme}>
         <Helmet
           bodyAttributes={{
             class: "body",
@@ -27,8 +23,8 @@ const Layout = ({ pageTitle, children }: LayoutProps) => {
         <CssBaseline />
         <GlobalStyle />
         {children}
-      </ThemeProvider>
-    </MaterialThemeProvider>
+      </MaterialThemeProvider>
+    </ThemeProvider>
   );
 };
 
