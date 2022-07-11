@@ -20,6 +20,8 @@
     "type-check": "tsc --pretty"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "babel-plugin-styled-components": "^2.0.7",
@@ -31,6 +33,7 @@
     "gatsby-plugin-sharp": "^4.18.0",
     "gatsby-plugin-styled-components": "^5.18.0",
     "gatsby-source-filesystem": "^4.18.0",
+    "gatsby-source-multi-api": "^1.0.5",
     "gatsby-transformer-sharp": "^4.18.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -52,6 +55,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-webpack-plugin": "^3.2.0",
     "gatsby-plugin-eslint": "^4.0.2",
+    "gatsby-plugin-material-ui": "^4.1.0",
     "prettier": "2.7.1",
     "typescript": "^4.7.4"
   }
