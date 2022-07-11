@@ -5,9 +5,6 @@ const config: GatsbyConfig = {
     title: `JourneyAdvisor`,
     siteUrl: `https://www.yourdomain.tld`
   },
-  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-  // If you use VSCode you can also use the GraphQL plugin
-  // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-react-helmet", {
     resolve: 'gatsby-plugin-manifest',
@@ -28,7 +25,16 @@ const config: GatsbyConfig = {
       "path": "./src/pages/"
     },
     __key: "pages"
-  }]
+  },
+  //   {
+  //   resolve: 'gatsby-source-multi-api',
+  //   options: {
+  //     apis: [
+  //       'https://api.spacex.land/rest/capsules'
+  //     ],
+  //   },
+  // },
+  ]
 };
 
 export default config;

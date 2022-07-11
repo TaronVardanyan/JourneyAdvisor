@@ -1,16 +1,15 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
-    border: 0;
+  #___gatsby {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
   }
 
-  body, html, #___gatsby, #gatsby-focus-wrapper {
-    min-height: 100vh;
-    height: auto;
-    box-sizing: border-box;
+  #gatsby-focus-wrapper {
+    width: 100%;
   }
 `;
 
