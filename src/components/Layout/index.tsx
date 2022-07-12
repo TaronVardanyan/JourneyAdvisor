@@ -10,8 +10,8 @@ import { ThemeProvider as MaterialThemeProvider } from "@mui/material/styles";
 
 const Layout = ({ pageTitle, children }: LayoutProps) => {
   return (
-    <ThemeProvider theme={Theme}>
-      <MaterialThemeProvider theme={materialUiTheme}>
+    <MaterialThemeProvider theme={materialUiTheme}>
+      <ThemeProvider theme={Theme}>
         <Helmet
           bodyAttributes={{
             class: "body",
@@ -20,11 +20,11 @@ const Layout = ({ pageTitle, children }: LayoutProps) => {
           <meta charSet="utf-8" />
           <title>{pageTitle}</title>
         </Helmet>
-        <CssBaseline />
         <GlobalStyle />
+        <CssBaseline />
         {children}
-      </MaterialThemeProvider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </MaterialThemeProvider>
   );
 };
 
