@@ -1,6 +1,21 @@
 import { makeStyles } from "@material-ui/core/styles";
 import { alpha } from "@mui/material/styles";
 import { materialUiTheme } from "../../../../styles/materialUITheme";
+import styled from "styled-components";
+import SearchIcon from "@material-ui/icons/Search";
+
+export const Search = styled(SearchIcon)`
+  height: 2.5rem !important;
+  position: absolute;
+  left: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg {
+    height: 2.5rem !important;
+    color: white !important;
+  }
+`;
 
 export default makeStyles((theme: typeof materialUiTheme) => ({
   title: {
@@ -21,15 +36,6 @@ export default makeStyles((theme: typeof materialUiTheme) => ({
       marginLeft: theme.spacing(3),
       width: "auto",
     },
-  },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: "100%",
-    position: "absolute",
-    pointerEvents: "none",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
   },
   inputRoot: {
     color: "inherit",

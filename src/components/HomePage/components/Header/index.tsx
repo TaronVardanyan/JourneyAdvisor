@@ -1,8 +1,7 @@
 import React from "react";
 // import { Autocomplete } from "@react-google-maps/api";
-import SearchIcon from "@material-ui/icons/Search";
 import { AppBar, Toolbar, Typography, InputBase, Box } from "@mui/material";
-import useStyles from "./styles";
+import useStyles, { Search as SearchIcon } from "./styles";
 
 const Header = () => {
   const classes = useStyles();
