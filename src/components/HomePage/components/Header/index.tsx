@@ -17,9 +17,7 @@ const Header = () => {
           </Typography>
           {/*<Autocomplete>*/}
           <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
+            <SearchIcon />
             <InputBase
               placeholder="Search..."
               classes={{ root: classes.inputRoot, input: classes.inputInput }}

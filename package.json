@@ -14,13 +14,14 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "format": "prettier --write \"**/*.ts\" \"**/*.tsx\" \"**/*.css\" \"**/*.json\"",
+    "format": "prettier --write \"**/*.ts\" \"**/*.tsx\" \"**/*.json\"",
     "test": "npm run type-check && npm run lint",
     "lint": "eslint . --ext .ts,.tsx",
     "type-check": "tsc --pretty"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
+    "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.9.3",
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
@@ -33,6 +34,7 @@
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^2.18.0",
     "gatsby-plugin-manifest": "^4.18.0",
+    "gatsby-plugin-material-ui": "^4.1.0",
     "gatsby-plugin-mdx": "^3.18.0",
     "gatsby-plugin-react-helmet": "^5.18.0",
     "gatsby-plugin-sharp": "^4.18.0",
@@ -61,7 +63,6 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-webpack-plugin": "^3.2.0",
     "gatsby-plugin-eslint": "^4.0.2",
-    "gatsby-plugin-material-ui": "^4.0.2",
     "prettier": "2.7.1",
     "typescript": "^4.7.4"
   }
