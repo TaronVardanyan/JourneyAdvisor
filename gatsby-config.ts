@@ -26,6 +26,15 @@ const config: GatsbyConfig = {
     },
     __key: "pages"
   },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: [
+          'material icons',
+          'roboto:300,400,500,700',
+        ],
+      },
+    },
   //   {
   //   resolve: 'gatsby-source-multi-api',
   //   options: {
