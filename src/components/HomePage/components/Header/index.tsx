@@ -1,31 +1,29 @@
 import React from "react";
 // import { Autocomplete } from "@react-google-maps/api";
-import { AppBar, Toolbar, Typography, InputBase, Box } from "@mui/material";
-import useStyles, { Search as SearchIcon } from "./styles";
+import { AppBar, Typography, Box } from "@mui/material";
+import {
+  Search as SearchIcon,
+  SearchPlaceTitle,
+  MUIToolbar,
+  InputWrapper,
+  MUIInput,
+} from "./styles";
 
 const Header = () => {
-  const classes = useStyles();
   return (
     <AppBar position="static">
-      <Toolbar className={classes.toolbar}>
-        <Typography variant="h5" className={classes.title}>
-          Journey Advisor
-        </Typography>
+      <MUIToolbar>
+        <Typography variant="h5">Journey Advisor</Typography>
         <Box display="flex">
-          <Typography variant="h6" className={classes.title}>
-            Explore new places
-          </Typography>
+          <SearchPlaceTitle variant="h6">Explore new places</SearchPlaceTitle>
           {/*<Autocomplete>*/}
-          <div className={classes.search}>
+          <InputWrapper>
             <SearchIcon />
-            <InputBase
-              placeholder="Search..."
-              classes={{ root: classes.inputRoot, input: classes.inputInput }}
-            />
-          </div>
+            <MUIInput placeholder="Search..." />
+          </InputWrapper>
           {/*</Autocomplete>*/}
         </Box>
-      </Toolbar>
+      </MUIToolbar>
     </AppBar>
   );
 };

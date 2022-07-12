@@ -1,8 +1,6 @@
-import { makeStyles } from "@material-ui/core/styles";
-import { alpha } from "@mui/material/styles";
-import { materialUiTheme } from "../../../../styles/materialUITheme";
 import styled from "styled-components";
 import SearchIcon from "@material-ui/icons/Search";
+import { Toolbar, InputBase, Typography } from "@mui/material";
 
 export const Search = styled(SearchIcon)`
   height: 2.5rem !important;
@@ -14,38 +12,28 @@ export const Search = styled(SearchIcon)`
   fill: white;
 `;
 
-export default makeStyles((theme: typeof materialUiTheme) => ({
-  title: {
-    display: "none",
-    [theme.breakpoints.up("sm")]: {
-      display: "block",
-    },
-  },
-  search: {
-    position: "relative",
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
-    "&:hover": { backgroundColor: alpha(theme.palette.common.white, 0.25) },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(3),
-      width: "auto",
-    },
-  },
-  inputRoot: {
-    color: "inherit",
-  },
-  inputInput: {
-    padding: `${theme.spacing(1, 1, 1, 0)} !important`,
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px) !important`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("md")]: { width: "20ch" },
-  },
-  toolbar: {
-    display: "flex",
-    justifyContent: "space-between",
-  },
-}));
+export const MUIToolbar = styled(Toolbar)`
+  justify-content: space-between;
+`;
+
+export const InputWrapper = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  margin-left: 1rem;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.15);
+`;
+
+export const MUIInput = styled(InputBase)`
+  width: 100%;
+  padding: 8px 8px 8px 0 !important;
+  transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  padding-left: calc(1em + 32px) !important;
+`;
+
+export const SearchPlaceTitle = styled(Typography)`
+  line-height: 2.75rem !important;
+`;
