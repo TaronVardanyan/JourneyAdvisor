@@ -6,7 +6,7 @@ const config: GatsbyConfig = {
     siteUrl: `https://www.yourdomain.tld`
   },
   graphqlTypegen: true,
-  plugins: ["gatsby-theme-material-ui", "gatsby-plugin-material-ui", "gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-react-helmet", {
+  plugins: ["gatsby-theme-material-ui", "gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-react-helmet", {
     resolve: 'gatsby-plugin-manifest',
     options: {
       "icon": "src/images/icon.png"
@@ -34,15 +34,7 @@ const config: GatsbyConfig = {
           'roboto:300,400,500,700',
         ],
       },
-    },
-  //   {
-  //   resolve: 'gatsby-source-multi-api',
-  //   options: {
-  //     apis: [
-  //       'https://api.spacex.land/rest/capsules'
-  //     ],
-  //   },
-  // },
+    }
   ]
 };
 
