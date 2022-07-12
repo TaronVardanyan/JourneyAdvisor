@@ -14,7 +14,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "format": "prettier --write \"**/*.ts\" \"**/*.tsx\" \"**/*.css\" \"**/*.json\"",
+    "format": "prettier --write \"**/*.ts\" \"**/*.tsx\" \"**/*.json\"",
     "test": "npm run type-check && npm run lint",
     "lint": "eslint . --ext .ts,.tsx",
     "type-check": "tsc --pretty"

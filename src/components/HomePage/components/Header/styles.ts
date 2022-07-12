@@ -11,10 +11,7 @@ export const Search = styled(SearchIcon)`
   display: flex;
   align-items: center;
   justify-content: center;
-  svg {
-    height: 2.5rem !important;
-    color: white !important;
-  }
+  fill: white;
 `;
 
 export default makeStyles((theme: typeof materialUiTheme) => ({
