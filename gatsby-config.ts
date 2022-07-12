@@ -6,7 +6,7 @@ const config: GatsbyConfig = {
     siteUrl: `https://www.yourdomain.tld`
   },
   graphqlTypegen: true,
-  plugins: ["gatsby-theme-material-ui", "gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-react-helmet", {
+  plugins: ["gatsby-plugin-material-ui", "gatsby-theme-material-ui", "gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-react-helmet", {
     resolve: 'gatsby-plugin-manifest',
     options: {
       "icon": "src/images/icon.png"

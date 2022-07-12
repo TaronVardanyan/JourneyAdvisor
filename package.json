@@ -20,7 +20,6 @@
     "type-check": "tsc --pretty"
   },
   "dependencies": {
-    "@emotion/cache": "^11.9.3",
     "@emotion/react": "^11.9.3",
     "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.9.3",
@@ -35,6 +34,7 @@
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^2.18.0",
     "gatsby-plugin-manifest": "^4.18.0",
+    "gatsby-plugin-material-ui": "^4.1.0",
     "gatsby-plugin-mdx": "^3.18.0",
     "gatsby-plugin-react-helmet": "^5.18.0",
     "gatsby-plugin-sharp": "^4.18.0",
@@ -47,7 +47,6 @@
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",
     "styled-components": "^5.3.5",
-    "tss-react": "^3.7.1",
     "yarn": "^1.22.19"
   },
   "devDependencies": {
