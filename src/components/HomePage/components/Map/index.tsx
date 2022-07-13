@@ -10,10 +10,12 @@ const Map = () => {
 
   const coordinates = { lat: 0, lng: 0 };
 
+  console.log(process.env.MAPS_API_KEY, 999);
+
   return (
     <div className={classes.mapContainer}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyAwU0rdhbC0T2fyHbRVMhe1pvs6NX_H6Jg" }}
+        bootstrapURLKeys={{ key: process.env.MAPS_API_KEY as string }}
         defaultCenter={coordinates}
         center={coordinates}
         defaultZoom={14}
