@@ -40,7 +40,13 @@ const config: GatsbyConfig = {
           'roboto:300,400,500,700',
         ],
       },
-    }
+    },
+    {
+      resolve: 'gatsby-plugin-env-variables',
+      options: {
+        allowList: ["MAP_API_KEY"]
+      },
+    },
   ]
 };
 
