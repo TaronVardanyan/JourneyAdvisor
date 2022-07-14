@@ -10,18 +10,18 @@ const Map = () => {
 
   const coordinates = { lat: 0, lng: 0 };
 
-  return (
-    process.env.MAP_API_KEY && (
-      <div className={classes.mapContainer}>
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: process.env.MAP_API_KEY as string }}
-          defaultCenter={coordinates}
-          center={coordinates}
-          defaultZoom={14}
-          margin={[50, 50, 50, 50]}
-        ></GoogleMapReact>
-      </div>
-    )
+  return process.env.MAP_API_KEY ? (
+    <div className={classes.mapContainer}>
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: process.env.MAP_API_KEY as string }}
+        defaultCenter={coordinates}
+        center={coordinates}
+        defaultZoom={14}
+        margin={[50, 50, 50, 50]}
+      ></GoogleMapReact>
+    </div>
+  ) : (
+    <div>Loading...</div>
   );
 };
 
