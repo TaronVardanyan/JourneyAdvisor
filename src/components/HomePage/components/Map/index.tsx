@@ -1,12 +1,12 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
-// import { useMediaQuery } from "@mui/material";
-// import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
+import { useMediaQuery } from "@mui/material";
+import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 import useStyles from "./styles";
 
 const Map = () => {
   const classes = useStyles();
-  // const isMobile = useMediaQuery("(min-width: 600px)");
+  const isMobile = useMediaQuery("(min-width: 600px)");
 
   const coordinates = { lat: 0, lng: 0 };
 
