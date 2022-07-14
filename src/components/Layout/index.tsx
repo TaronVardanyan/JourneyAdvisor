@@ -4,7 +4,7 @@ import Helmet from "react-helmet";
 import GlobalStyle from "../../styles/global";
 import Theme from "../../styles/theme";
 import { ThemeProvider } from "styled-components";
-import CssBaseline from "@mui/material/CssBaseline";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import { materialUiTheme } from "../../styles/materialUITheme";
 import { ThemeProvider as MaterialThemeProvider } from "@mui/material/styles";
 
