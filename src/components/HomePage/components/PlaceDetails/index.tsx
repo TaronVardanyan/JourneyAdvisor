@@ -1,7 +1,13 @@
 import React from "react";
 
-const PlaceDetails = () => {
-  return <div>PlaceDetails</div>;
+interface Props {
+  place: {
+    name: string;
+  };
+}
+
+const PlaceDetails = ({ place }: Props) => {
+  return <h1>{place.name}</h1>;
 };
 
 export default PlaceDetails;
