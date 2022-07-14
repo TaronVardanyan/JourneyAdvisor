@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <HomePageWrapper>
       <Header />
-      <MaterialGrid container spacing={3}>
+      <MaterialGrid container>
         <MaterialGrid item xs={12} md={4}>
           <List />
         </MaterialGrid>
