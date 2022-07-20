@@ -46,19 +46,7 @@ const config: GatsbyConfig = {
       options: {
         allowList: ["MAP_API_KEY"]
       },
-    },
-      {
-      resolve: 'gatsby-source-multi-api',
-      options: {
-        apis: [
-          {
-            baseUrl: "https://travel-advisor.p.rapidapi.com",
-            endpoints: ["restaurants", "hotels", "attractions"],
-            method: "OPTIONS",
-          }
-        ],
-      },
-    },
+    }
   ]
 };
 
