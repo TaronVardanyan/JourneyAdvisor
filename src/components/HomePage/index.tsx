@@ -12,10 +12,12 @@ const HomePage = () => {
   const [bounds, setBounds] = useState<Bounds | null>(null);
 
   useEffect(() => {
-    if (bounds?.ne && bounds.sw) {
+    if (bounds?.ne && bounds?.sw) {
       getPlacesData(bounds.sw, bounds.ne).then(data => setPlaces(data));
     }
   }, [bounds]);
+
+  console.log(places, 999);
 
   useEffect(() => {
     if (!coordinates) {
@@ -27,12 +29,14 @@ const HomePage = () => {
     }
   }, [coordinates]);
 
+  console.log(places, 9999);
+
   return (
     <HomePageWrapper>
       <Header />
       <MaterialGrid container>
         <MaterialGrid item xs={12} md={4}>
-          <List />
+          {!!places.length && <List places={places} />}
         </MaterialGrid>
         <MaterialGrid item xs={12} md={8}>
           {coordinates && (
