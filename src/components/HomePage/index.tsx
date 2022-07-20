@@ -15,8 +15,10 @@ const HomePage = () => {
   const [bounds, setBounds] = useState<Bounds | null>(null);
 
   useEffect(() => {
-    getPlacesData().then(data => setPlaces(data));
-  }, []);
+    if (bounds?.ne && bounds.sw) {
+      getPlacesData(bounds.sw, bounds.ne).then(data => setPlaces(data));
+    }
+  }, [bounds]);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -25,8 +27,6 @@ const HomePage = () => {
       },
     );
   }, []);
-
-  console.log(places, bounds, 999);
 
   return (
     <HomePageWrapper>
