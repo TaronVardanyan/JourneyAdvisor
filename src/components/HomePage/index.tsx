@@ -8,10 +8,7 @@ import { Bounds, Coordinates } from "./types";
 
 const HomePage = () => {
   const [places, setPlaces] = useState([]);
-  const [coordinates, setCoordinates] = useState<Coordinates>({
-    lat: 0,
-    lng: 0,
-  });
+  const [coordinates, setCoordinates] = useState<Coordinates>();
   const [bounds, setBounds] = useState<Bounds | null>(null);
 
   useEffect(() => {
@@ -21,12 +18,14 @@ const HomePage = () => {
   }, [bounds]);
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(
-      ({ coords: { latitude, longitude } }) => {
-        setCoordinates({ lat: latitude, lng: longitude });
-      },
-    );
-  }, []);
+    if (!coordinates) {
+      navigator.geolocation.getCurrentPosition(
+        ({ coords: { latitude, longitude } }) => {
+          setCoordinates({ lat: latitude, lng: longitude });
+        },
+      );
+    }
+  }, [coordinates]);
 
   return (
     <HomePageWrapper>
@@ -36,11 +35,13 @@ const HomePage = () => {
           <List />
         </MaterialGrid>
         <MaterialGrid item xs={12} md={8}>
-          <Map
-            setCoordinates={setCoordinates}
-            setBounds={setBounds}
-            coordinates={coordinates}
-          />
+          {coordinates && (
+            <Map
+              setCoordinates={setCoordinates}
+              setBounds={setBounds}
+              coordinates={coordinates}
+            />
+          )}
         </MaterialGrid>
       </MaterialGrid>
     </HomePageWrapper>
