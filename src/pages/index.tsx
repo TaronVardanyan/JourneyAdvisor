@@ -1,11 +1,17 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Layout from "../components/Layout";
-import HomePage from "../components/HomePage";
+
+const HomePage = React.lazy(() => import("../components/HomePage"));
 
 const Home = () => {
+  const isSSR = typeof window === "undefined";
   return (
     <Layout pageTitle="Journey Advisor">
-      <HomePage />
+      {!isSSR && (
+        <Suspense fallback={<div>Loading</div>}>
+          <HomePage />
+        </Suspense>
+      )}
     </Layout>
   );
 };
