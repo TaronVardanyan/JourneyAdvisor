@@ -11,7 +11,11 @@ import {
   MenuItem,
 } from "@material-ui/core";
 
-const List = () => {
+interface Props {
+  places: never[];
+}
+
+const List = ({ places }: Props) => {
   const [type, setType] = useState("restaurants");
   const [rating, setRating] = useState("0");
   const classes = useStyles();
@@ -20,24 +24,6 @@ const List = () => {
     setRating(e.target.value as string);
   const handleChangeType = (e: React.ChangeEvent<{ value: unknown }>) =>
     setType(e.target.value as string);
-
-  const places = [
-    { name: "Cool place" },
-    { name: "Best beer" },
-    { name: "Cool steak" },
-    { name: "Cool place" },
-    { name: "Best beer" },
-    { name: "Cool steak" },
-    { name: "Best beer" },
-    { name: "Cool steak" },
-    { name: "Best beer" },
-    { name: "Cool steak" },
-    { name: "Best beer" },
-    { name: "Cool steak" },
-    { name: "Cool place" },
-    { name: "Best beer" },
-    { name: "Cool steak" },
-  ];
 
   return (
     <div className={classes.container}>
