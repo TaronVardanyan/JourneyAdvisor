@@ -11,7 +11,7 @@ const options = {
     tr_longitude: "109.149359",
   },
   headers: {
-    "X-RapidAPI-Key": "720b443f35msh6ef4b8a88284e97p115241jsn630e02f171e0",
+    "X-RapidAPI-Key": process.env.TRAVEL_ADVISOR_API_KEY as string,
     "X-RapidAPI-Host": "travel-advisor.p.rapidapi.com",
   },
 };
