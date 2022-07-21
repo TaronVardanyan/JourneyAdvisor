@@ -12,7 +12,7 @@ import {
 } from "@material-ui/core";
 
 interface Props {
-  places: never[];
+  places: any;
 }
 
 const List = ({ places }: Props) => {
@@ -48,7 +48,7 @@ const List = ({ places }: Props) => {
         </Select>
       </FormControl>
       <Grid container spacing={3} className={classes.list}>
-        {places.map((place, i) => (
+        {places.map((place: any, i: number) => (
           <Grid item key={i} xs={12}>
             <PlaceDetails place={place} />
           </Grid>
