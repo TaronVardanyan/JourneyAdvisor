@@ -29,14 +29,12 @@ const HomePage = () => {
     }
   }, [coordinates]);
 
-  console.log(places, 9999);
-
   return (
     <HomePageWrapper>
       <Header />
       <MaterialGrid container>
         <MaterialGrid item xs={12} md={4}>
-          {!!places.length && <List places={places} />}
+          {!!places.length && <List places={places as any} />}
         </MaterialGrid>
         <MaterialGrid item xs={12} md={8}>
           {coordinates && (
