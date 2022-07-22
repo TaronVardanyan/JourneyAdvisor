@@ -7,17 +7,21 @@ import Map from "./components/Map";
 import { Bounds, Coordinates } from "./types";
 
 const HomePage = () => {
+  const [childClicked, setChildClicked] = useState(null);
   const [places, setPlaces] = useState([]);
   const [coordinates, setCoordinates] = useState<Coordinates>();
   const [bounds, setBounds] = useState<Bounds | null>(null);
+  const [isLoading, setLoadingState] = useState(false);
 
   useEffect(() => {
     if (bounds?.ne && bounds?.sw) {
-      getPlacesData(bounds.sw, bounds.ne).then(data => setPlaces(data));
+      setLoadingState(true);
+      getPlacesData(bounds.sw, bounds.ne).then(data => {
+        setPlaces(data);
+        setLoadingState(false);
+      });
     }
   }, [bounds]);
-
-  console.log(places, 999);
 
   useEffect(() => {
     if (!coordinates) {
@@ -34,7 +38,13 @@ const HomePage = () => {
       <Header />
       <MaterialGrid container>
         <MaterialGrid item xs={12} md={4}>
-          {!!places.length && <List places={places as any} />}
+          {!!places.length && (
+            <List
+              isLoading={isLoading}
+              places={places as any}
+              childClicked={childClicked}
+            />
+          )}
         </MaterialGrid>
         <MaterialGrid item xs={12} md={8}>
           {coordinates && (
@@ -43,6 +53,7 @@ const HomePage = () => {
               setBounds={setBounds}
               coordinates={coordinates}
               places={places as any}
+              setChildClicked={setChildClicked}
             />
           )}
         </MaterialGrid>

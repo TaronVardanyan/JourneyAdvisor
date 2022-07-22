@@ -8,10 +8,17 @@ interface Props {
   setCoordinates: (coordinates: Coordinates) => void;
   setBounds: (bounds: Bounds) => void;
   coordinates: Coordinates;
+  setChildClicked: (child: any) => void;
   places: any;
 }
 
-const Map = ({ setCoordinates, setBounds, coordinates, places }: Props) => {
+const Map = ({
+  setCoordinates,
+  setBounds,
+  coordinates,
+  places,
+  setChildClicked,
+}: Props) => {
   const classes = useStyles();
   const isDesktop = useMediaQuery("(min-width: 600px)");
 
@@ -29,6 +36,7 @@ const Map = ({ setCoordinates, setBounds, coordinates, places }: Props) => {
         defaultZoom={14}
         margin={[50, 50, 50, 50]}
         onChange={handleChange}
+        onChildClick={child => setChildClicked(child)}
       >
         {places?.length &&
           places.map((place: any, i: number) => (
