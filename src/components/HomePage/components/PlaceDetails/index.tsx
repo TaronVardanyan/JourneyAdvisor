@@ -1,16 +1,16 @@
 import React from "react";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import PhoneIcon from "@material-ui/icons/Phone";
-// import Rating from "@mui/material/Rating";
 import useStyles from "./styles";
+import { Rating } from "@mui/material";
 import {
   Box,
   Typography,
   Card,
   CardMedia,
-  // Button,
+  Button,
   CardContent,
-  // CardActions,
+  CardActions,
   Chip,
 } from "@mui/material";
 
@@ -35,6 +35,12 @@ const PlaceDetails = ({ place }: Props) => {
         <Typography gutterBottom variant="h5">
           {place.name}
         </Typography>
+        <Box display="flex" justifyContent="space-between">
+          <Rating value={Number(place.rating)} readOnly />
+          <Typography gutterBottom variant="subtitle1">
+            out of {place.num_reviews}
+          </Typography>
+        </Box>
         <Box display="flex" justifyContent="space-between">
           <Typography variant="subtitle1">Price</Typography>
           <Typography gutterBottom variant="subtitle1">
@@ -87,6 +93,22 @@ const PlaceDetails = ({ place }: Props) => {
           </Typography>
         )}
       </CardContent>
+      <CardActions>
+        <Button
+          color="primary"
+          size="small"
+          onClick={() => window.open(place.web_url, "_blank")}
+        >
+          Trip Advisor
+        </Button>
+        <Button
+          color="primary"
+          size="small"
+          onClick={() => window.open(place.website, "_blank")}
+        >
+          Website
+        </Button>
+      </CardActions>
     </Card>
   );
 };
