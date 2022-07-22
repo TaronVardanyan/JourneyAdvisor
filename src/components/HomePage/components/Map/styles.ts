@@ -1,4 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
+import styled from "styled-components";
+import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 
 export default makeStyles(() => ({
   paper: {
@@ -22,3 +24,10 @@ export default makeStyles(() => ({
     cursor: "pointer",
   },
 }));
+
+export const LocationIcon = styled(LocationOnOutlinedIcon)`
+  svg {
+    height: 2.5rem !important;
+    fill: white !important;
+  }
+`;

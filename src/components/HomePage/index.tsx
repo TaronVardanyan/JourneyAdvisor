@@ -42,6 +42,7 @@ const HomePage = () => {
               setCoordinates={setCoordinates}
               setBounds={setBounds}
               coordinates={coordinates}
+              places={places as any}
             />
           )}
         </MaterialGrid>
