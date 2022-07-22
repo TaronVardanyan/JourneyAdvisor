@@ -35,8 +35,8 @@ const Map = ({ setCoordinates, setBounds, coordinates, places }: Props) => {
             <div
               key={i}
               className={classes.markerContainer}
-              data-lat={Number(place.lat)}
-              data-lng={Number(place.lng)}
+              lat={Number(place.lat)}
+              lng={Number(place.lng)}
             >
               {!isDesktop ? (
                 <LocationIcon color="primary" />
