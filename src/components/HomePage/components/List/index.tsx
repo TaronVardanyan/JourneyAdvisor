@@ -26,7 +26,7 @@ const List = ({ places, childClicked, isLoading }: Props) => {
   useEffect(() => {
     if (places?.length) {
       const refs: any = Array(places.length)
-        .fill(null)
+        .fill({})
         .map((_, i) => refs[i] || createRef());
       setElRefs(refs);
     }
