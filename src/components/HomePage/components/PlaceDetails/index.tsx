@@ -23,6 +23,8 @@ interface Props {
 const PlaceDetails = ({ place, selected, refProp }: Props) => {
   const classes = useStyles();
 
+  console.log(selected, 555);
+
   if (selected)
     refProp?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
 
