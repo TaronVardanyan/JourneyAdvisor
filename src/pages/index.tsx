@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import Layout from "../components/Layout";
+import { CircularProgress } from "@material-ui/core";
 
 const HomePage = React.lazy(() => import("../components/HomePage"));
 
@@ -8,7 +9,7 @@ const Home = () => {
   return (
     <Layout pageTitle="Journey Advisor">
       {!isSSR && (
-        <Suspense fallback={<div>Loading</div>}>
+        <Suspense fallback={<CircularProgress size="5rem" />}>
           <HomePage />
         </Suspense>
       )}
