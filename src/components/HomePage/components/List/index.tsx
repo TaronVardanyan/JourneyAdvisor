@@ -31,8 +31,6 @@ const List = ({ places, childClicked, isLoading }: Props) => {
     }
   }, [places]);
 
-  console.log(childClicked, 999);
-
   const handleChangeRating = (e: React.ChangeEvent<{ value: unknown }>) =>
     setRating(e.target.value as string);
   const handleChangeType = (e: React.ChangeEvent<{ value: unknown }>) =>
@@ -68,7 +66,7 @@ const List = ({ places, childClicked, isLoading }: Props) => {
           </FormControl>
           <Grid container spacing={3} className={classes.list}>
             {places.map((place: any, i: number) => (
-              <Grid item key={i} xs={12}>
+              <Grid item key={i} xs={12} ref={elRefs[i]}>
                 <PlaceDetails
                   refProp={elRefs[i]}
                   selected={Number(childClicked) === i}
