@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { HomePageWrapper, MaterialGrid } from "./styles";
+import useStyles, { HomePageWrapper, MaterialGrid } from "./styles";
 import { getPlacesData } from "../../api";
 import Header from "./components/Header";
 import List from "./components/List";
 import Map from "./components/Map";
 import { Bounds, Coordinates } from "./types";
+import { CircularProgress } from "@material-ui/core";
 
 const HomePage = () => {
+  const classes = useStyles();
   const [childClicked, setChildClicked] = useState(null);
   const [places, setPlaces] = useState([]);
   const [filteredPlaces, setFilteredPlaces] = useState([]);
@@ -44,32 +46,42 @@ const HomePage = () => {
   return (
     <HomePageWrapper>
       <Header />
-      <MaterialGrid container>
-        <MaterialGrid item xs={12} md={4}>
-          {!!places.length && (
-            <List
-              type={type}
-              rating={rating}
-              setRating={setRating}
-              setType={setType}
-              isLoading={isLoading}
-              places={(filteredPlaces.length ? filteredPlaces : places) as any}
-              childClicked={childClicked}
-            />
-          )}
+      {!!places.length && coordinates ? (
+        <MaterialGrid container>
+          <MaterialGrid item xs={12} md={4}>
+            {!!places.length && (
+              <List
+                type={type}
+                rating={rating}
+                setRating={setRating}
+                setType={setType}
+                isLoading={isLoading}
+                places={
+                  (filteredPlaces.length ? filteredPlaces : places) as any
+                }
+                childClicked={childClicked}
+              />
+            )}
+          </MaterialGrid>
+          <MaterialGrid item xs={12} md={8}>
+            {coordinates && (
+              <Map
+                setCoordinates={setCoordinates}
+                setBounds={setBounds}
+                coordinates={coordinates}
+                places={
+                  (filteredPlaces.length ? filteredPlaces : places) as any
+                }
+                setChildClicked={setChildClicked}
+              />
+            )}
+          </MaterialGrid>
         </MaterialGrid>
-        <MaterialGrid item xs={12} md={8}>
-          {coordinates && (
-            <Map
-              setCoordinates={setCoordinates}
-              setBounds={setBounds}
-              coordinates={coordinates}
-              places={(filteredPlaces.length ? filteredPlaces : places) as any}
-              setChildClicked={setChildClicked}
-            />
-          )}
-        </MaterialGrid>
-      </MaterialGrid>
+      ) : (
+        <div className={classes.loading}>
+          <CircularProgress size="5rem" />
+        </div>
+      )}
     </HomePageWrapper>
   );
 };
