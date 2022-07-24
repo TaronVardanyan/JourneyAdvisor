@@ -11,7 +11,6 @@ const HomePage = () => {
   const classes = useStyles();
   const [childClicked, setChildClicked] = useState(null);
   const [places, setPlaces] = useState([]);
-  const [filteredPlaces, setFilteredPlaces] = useState([]);
   const [coordinates, setCoordinates] = useState<Coordinates>();
   const [bounds, setBounds] = useState<Bounds | null>(null);
   const [isLoading, setLoadingState] = useState(false);
@@ -30,7 +29,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const fPlaces = places.filter((place: any) => place.rating >= rating);
-    setFilteredPlaces(fPlaces);
+    setPlaces(fPlaces);
   }, [rating]);
 
   useEffect(() => {
@@ -56,9 +55,7 @@ const HomePage = () => {
                 setRating={setRating}
                 setType={setType}
                 isLoading={isLoading}
-                places={
-                  (filteredPlaces.length ? filteredPlaces : places) as any
-                }
+                places={places as any}
                 childClicked={childClicked}
               />
             )}
@@ -68,7 +65,7 @@ const HomePage = () => {
               setCoordinates={setCoordinates}
               setBounds={setBounds}
               coordinates={coordinates}
-              places={(filteredPlaces.length ? filteredPlaces : places) as any}
+              places={places as any}
               setChildClicked={setChildClicked}
             />
           </MaterialGrid>
