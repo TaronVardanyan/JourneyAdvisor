@@ -1,10 +1,8 @@
 import axios from "axios";
 import GoogleMapReact from "google-map-react";
 
-const URL =
-  "https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary";
-
 export const getPlacesData = async (
+  type: string,
   sw: GoogleMapReact.Coords,
   ne: GoogleMapReact.Coords,
 ) => {
@@ -22,7 +20,10 @@ export const getPlacesData = async (
   };
 
   try {
-    const response = await axios.get(URL, options);
+    const response = await axios.get(
+      `https://travel-advisor.p.rapidapi.com/${type}/list-in-boundary`,
+      options,
+    );
     return response.data.data;
   } catch (err) {
     console.error(err);
