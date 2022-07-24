@@ -29,7 +29,7 @@ const HomePage = () => {
   }, [type, bounds, coordinates]);
 
   useEffect(() => {
-    const fPlaces = places.filter((place: any) => place.rating > rating);
+    const fPlaces = places.filter((place: any) => place.rating >= rating);
     setFilteredPlaces(fPlaces);
   }, [rating]);
 
@@ -46,7 +46,7 @@ const HomePage = () => {
   return (
     <HomePageWrapper>
       <Header />
-      {!!places.length && coordinates ? (
+      {coordinates ? (
         <MaterialGrid container>
           <MaterialGrid item xs={12} md={4}>
             {!!places.length && (
@@ -64,17 +64,13 @@ const HomePage = () => {
             )}
           </MaterialGrid>
           <MaterialGrid item xs={12} md={8}>
-            {coordinates && (
-              <Map
-                setCoordinates={setCoordinates}
-                setBounds={setBounds}
-                coordinates={coordinates}
-                places={
-                  (filteredPlaces.length ? filteredPlaces : places) as any
-                }
-                setChildClicked={setChildClicked}
-              />
-            )}
+            <Map
+              setCoordinates={setCoordinates}
+              setBounds={setBounds}
+              coordinates={coordinates}
+              places={(filteredPlaces.length ? filteredPlaces : places) as any}
+              setChildClicked={setChildClicked}
+            />
           </MaterialGrid>
         </MaterialGrid>
       ) : (
