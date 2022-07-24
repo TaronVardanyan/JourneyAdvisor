@@ -15,12 +15,22 @@ interface Props {
   places: any;
   childClicked: any;
   isLoading: boolean;
+  rating: string;
+  type: string;
+  setRating: (rating: string) => void;
+  setType: (type: string) => void;
 }
 
-const List = ({ places, childClicked, isLoading }: Props) => {
-  const [type, setType] = useState("restaurants");
+const List = ({
+  places,
+  childClicked,
+  isLoading,
+  type,
+  rating,
+  setRating,
+  setType,
+}: Props) => {
   const [elRefs, setElRefs] = useState([]);
-  const [rating, setRating] = useState("0");
   const classes = useStyles();
 
   useEffect(() => {
