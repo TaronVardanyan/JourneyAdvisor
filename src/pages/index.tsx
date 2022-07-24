@@ -1,19 +1,24 @@
 import React, { Suspense } from "react";
 import Layout from "../components/Layout";
-import { Box, CircularProgress } from "@material-ui/core";
-
+import { CircularProgress } from "@material-ui/core";
 const HomePage = React.lazy(() => import("../components/HomePage"));
 
 const Home = () => {
   const isSSR = typeof window === "undefined";
+  const styles = {
+    height: "100vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  };
   return (
     <Layout pageTitle="Journey Advisor">
       {!isSSR && (
         <Suspense
           fallback={
-            <Box display="flex" justifyContent="space-between">
+            <div style={styles}>
               <CircularProgress size="5rem" />
-            </Box>
+            </div>
           }
         >
           <HomePage />
