@@ -44,7 +44,7 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-env-variables',
       options: {
-        allowList: ["MAP_API_KEY", "TRAVEL_ADVISOR_API_KEY"]
+        allowList: ["MAP_API_KEY", "TRAVEL_ADVISOR_API_KEY", "PLACES_API_KEY"]
       },
     }
   ]
