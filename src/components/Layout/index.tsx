@@ -20,7 +20,9 @@ const Layout = ({ pageTitle, children }: LayoutProps) => {
           <meta charSet="utf-8" />
           <title>{pageTitle}</title>
           <script
-            src={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.MAP_API_KEY}`}
+            src={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${
+              process.env.MAP_API_KEY as string
+            }`}
           ></script>
         </Helmet>
         <GlobalStyle />
