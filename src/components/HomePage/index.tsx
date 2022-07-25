@@ -49,7 +49,7 @@ const HomePage = () => {
 
   return (
     <HomePageWrapper>
-      <Header />
+      <Header setCoordinates={setCoordinates} />
       {coordinates ? (
         <MaterialGrid container>
           <MaterialGrid item xs={12} md={4}>
