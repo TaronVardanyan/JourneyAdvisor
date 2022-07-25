@@ -22,11 +22,14 @@ const HomePage = () => {
     if (bounds?.ne && bounds?.sw) {
       setLoadingState(true);
       getPlacesData(type, bounds.sw, bounds.ne).then(data => {
-        setPlaces(data);
+        setPlaces(
+          data?.filter((place: any) => place.name && place.num_reviews > 0),
+        );
+        setRating("0");
         setLoadingState(false);
       });
     }
-  }, [type, bounds, coordinates]);
+  }, [type, bounds]);
 
   useEffect(() => {
     if (Number(rating)) {
